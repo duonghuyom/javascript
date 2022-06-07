@@ -1,32 +1,8 @@
-//data type
+var a = 1
+var b = '1'
 
-//string
-var a = 2
-var b = 2.5
+console.log(a == b) //true: boi vi chi so sanh gia tri
 
-//string
-var c = "huy"
-var d = 'huy'
-// hai kieu dau nhay deu nhu nhau chi phu thuoc xem minh thich loai nao hon
+console.log(a === b) //false: boi vi so sanh ca gia tri va kieu du lieu
 
-//boolean
-var isTrue = True //neu them dau nhay vao thi thanh kieu string 'True'
-
-//undefinded
-var name
-
-//null
-var isNull = null //nothing
-
-//symbol
-var sym = Symbol('sym') //unique
-var sym2 = Symbol('sym2')
-
-sym != sym2 // vi hai gia tri nay khac nhau
-
-// function
-var firstfunctio = function() {
-    alert("hi")
-}
-
-//
+console.log(a !== b) //true: boi vi khong giong kieu du lieu
