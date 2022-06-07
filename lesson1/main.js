@@ -1,19 +1,4 @@
-// var fullName = 'Nguyen Duong Huy'
-// var age = "20"
+var a = 8
+var b = 3
 
-// alert(fullName)
-// alert(age)
-
-console.log(123)
-
-var fullName = 'Nguyen Duong Huy'
-
-console.log(fullName)
-
-var warn = 'warning'
-
-console.warn(warn)
-
-var danger = 'danger'
-
-console.error(danger)
+console.log(Math.floor(a / b))
