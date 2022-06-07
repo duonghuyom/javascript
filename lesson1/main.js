@@ -1,4 +1,5 @@
-var a = 10
-var b = 3
+var a = "0"
+var b = 5
 
-console.log(a++ + ++b);
+// them dau + dang truoc mot chuoi thi se bien chuoi thanh so
+console.log(+a + b); //05
