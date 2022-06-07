@@ -1,4 +1,4 @@
-var a = 8
+var a = 10
 var b = 3
 
-console.log(Math.floor(a / b))
+console.log(a++ + ++b);
