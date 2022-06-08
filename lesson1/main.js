@@ -1,7 +1,12 @@
-// so - number
-var age = 20
-var pi = 3.1463424
+//tao function de check xem mot so co phai number ko, loai NaN van duoc coi la mot so nen vi the can xu li de no khong
+// duoc tinh la mot number
+function isNumber(value) {
+    if (typeof value == "number" && !isNaN(value)){
+        return true
+    }
+    else{
+        return false
+    }
+}
 
-console.log(pi.toFixed(2)) // lam tron den so thu 2
-
-console.log(isNaN(age))
+console.log(isNumber(NaN)); // false
