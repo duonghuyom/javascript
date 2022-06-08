@@ -1,48 +1,57 @@
-// vi du ve truyen mot parameter vao function
-function printconsolelog(message) { 
-    console.log(message)
-}
+// Chuoi trong javascript
 
-printconsolelog("hello")
+// Tao chuoi
+var fullName1 = 'Duong Huy' //cach 1
+var fullName2 = new String('Duong Huy'); //cach 2: khoi tao ra mot doi tuong
 
-// vi du ve print ra type
-function printtype(type) { 
-    console.log(typeof type)
-}
+//kiem tra do dai chuoi
+console.log(fullName2.length)
 
-printtype("huy")
+//viet theo kieu template
+var firstName = 'huy'
+var name = 'duong'
 
-// vi du ve truyen hai parameters vao function
-function print2params(param1, param2){
-    console.log(param1)
-    console.log(param2)
-}
+console.log(`toi la ${firstName} ${name}`)
 
-print2params(1, 2)
+// tim vi tri cua mot chuoi
+console.log(fullName1.indexOf('Duong'))
 
-// vi du trong function khong co params, ket qua tra ve se la mot array
-function arguments() {
-    console.log(arguments)
-}
+// tim vi tri mot tu o trong chuoi nhieu tu
+var chuoidai = "  duong huy Duong huy dUong huy"
+console.log(chuoidai.indexOf('huy', 8))
 
-arguments('arg1', 'arg2', 'arg3')
+// tim vi tri cua mot tu o vi tri cuoi
+console.log(chuoidai.lastIndexOf('huy'))
 
-// vi du su dung ham for of trong function
-function forof() {
-    for (var param of arguments){
-        console.log(param)
-    }
-}
+// tim vi tri cua mot tu
+console.log(chuoidai.search('huy'))
 
-forof("thu1", "thu2", "thu3", "thu4")
+// cat chuoi tu trai sang phai
+console.log(chuoidai.slice(5, 10))
 
-// vi du khac su dung arguments, ket qua tra ve se them dau gach ngang
-function arguments2() {
-    var word = ''
-    for (var param of arguments){
-        word += `${param} _`
-    }
-    console.log(word)
-}
+// cat chuoi tu phai sang trai
+console.log(chuoidai.slice(-4, -1))
 
-arguments2("nguyen", "duong", "huy")
+// replace
+console.log(chuoidai.replace('huy', 'Huy'))
+
+// bieu thuc chinh quy de tim tat ca cac tu huy trong chuoi
+console.log(chuoidai.replace(/huy/g, 'Huy'))
+
+//convert thanh chu in hoa
+console.log(chuoidai.toUpperCase())
+
+//convert thanh chu in thuong
+console.log(chuoidai.toLowerCase())
+
+//trim
+console.log(chuoidai.trim().length)
+
+//split: cat chuoi thanh mot array
+var language = "javascript, ruby, phh"
+console.log(language.split(' '))
+
+// lay ra ki tu theo vi tri
+console.log(chuoidai.charAt(5))
+console.log(chuoidai.charAt(40)) // tra ve chuoi rong vi khong co du lieu
+console.log(chuoidai.charAt[5])
