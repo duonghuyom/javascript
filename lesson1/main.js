@@ -1,22 +1,23 @@
-function test(param1, param2) {
-    console.log(`${param1} ${param2}`)
+//object trong javascript
+
+var info = {
+    name: 'duong huy',
+    age: 20,
+    email: 'duonghuy38@gmail.com',
+    hobby: 'gym',
+    getName: function() {
+        return this.name
+    } // function de lay ra ten trong mang
 }
 
-test('huy', 'duong')
+info.dob = '3/8/2001'
+info['home-address'] = 'ha noi'
 
-var test2 = [
-    'ga',
-    'tom'
-]
-var result = test2.concat('huy')
-console.log(result)
-// ['ga', 'tom', 'huy']
+console.log(info)
 
-var test3 = [
-    'xanh',
-    'hong',
-    'tim'
-]
-var result2 = test3.splice(2, 0, 'trang')
-console.log(test3)
-// []
+var hobby = 'hobby'
+
+console.log(info)
+console.log(info.email)
+console.log(info['age'])
+console.log(info.getName())
