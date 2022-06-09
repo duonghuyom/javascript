@@ -1,15 +1,6 @@
-// switch
-var num = 4
+// toan tu ba ngoi
+var a = 1
+var b = -1
 
-switch(num) {
-    case 2:
-        console.log('day la so 2')
-    case 3:
-        console.log('day la so 3')
-        break
-    case 4:
-        console.log('day la so 4')
-        break
-    default:
-        console.log("khong la so gi")
-}
+var result = a < 0 ? a : b
+console.log(result)
