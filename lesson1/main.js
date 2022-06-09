@@ -9,14 +9,17 @@ function User(firstName, lastName, age) {
     }
 }
 
+User.prototype.uni = "SB"
+User.prototype.getUniName = function(){
+    return this.uni
+}
+
 var user1 = new User('Huy', 'Nguyen', 20)
 user1.hobby = 'gym'
 var user2 = new User('Huy', "Tom", 2)
 user2['school'] = 'vins'
 
 console.log(user1)
-console.log(user1.hobby)
-console.log(typeof user1)
-console.log(user1.constructor)
 console.log(user2)
-console.log(user2.getName())
+console.log(user2.getUniName())
+console.log(user1.uni)
