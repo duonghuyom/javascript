@@ -30,7 +30,7 @@ var ex2 = [
     'vit',
     'ngong'
 ]
-console.log(ex2.splice(1, 1, "ngan")) //bdau vi tri 1, xoa 1 phan tu, them phan tu vao vi tri do
+console.log(ex2.slice(1, 1, "ngan")) //bdau vi tri 1, xoa 1 phan tu, them phan tu vao vi tri do
 
 //concat dung de noi hai mang
 console.log(ex1.concat(ex2))
