@@ -1,23 +1,22 @@
-//object trong javascript
+// object constructor
 
-var info = {
-    name: 'duong huy',
-    age: 20,
-    email: 'duonghuy38@gmail.com',
-    hobby: 'gym',
-    getName: function() {
-        return this.name
-    } // function de lay ra ten trong mang
+function User(firstName, lastName, age) {
+    this.firstName = firstName
+    this.lastName = lastName
+    this.age = age
+    this.getName = function() {
+        return `${firstName} ${lastName}`
+    }
 }
 
-info.dob = '3/8/2001'
-info['home-address'] = 'ha noi'
+var user1 = new User('Huy', 'Nguyen', 20)
+user1.hobby = 'gym'
+var user2 = new User('Huy', "Tom", 2)
+user2['school'] = 'vins'
 
-console.log(info)
-
-var hobby = 'hobby'
-
-console.log(info)
-console.log(info.email)
-console.log(info['age'])
-console.log(info.getName())
+console.log(user1)
+console.log(user1.hobby)
+console.log(typeof user1)
+console.log(user1.constructor)
+console.log(user2)
+console.log(user2.getName())
