@@ -1,44 +1,33 @@
-// generate ra nhung so random trong mot khoang
-function getRandNumbers(min, max, length){
-    var num = []
-    for (var i = 0; i < length; i++){
-        num[i] = Math.round(Math.random() * (max - min) + min)
-    }
-    return num
-}
-getRandNumbers(1, 10, 5)
-
-// tinh tong cac so duoc cho
-function getTotal(arr) {
-    var total = 0
-    for(var i = 0; i < arr.length; i++){
-        total += arr[i]
-    }
-    return total
+//for in loop
+var nha = {
+    dc: "hai",
+    loai: 'chungcu',
+    quan: "hai ba trung"
 }
 
-console.log(getTotal([1,2,3,4]))
+for (var key in nha){
+    console.log(nha[key])
+}
 
-// tinh tong gia tien cac order
-var orders = [
-    {
-        name: 'Khóa học HTML - CSS Pro',
-        price: 3000000
-    },
-    {
-        name: 'Khóa học Javascript Pro',
-        price: 2500000
-    },
-    {
-        name: 'Khóa học React Pro',
-        price: 3200000
-    }
+var languages = [
+    'english',
+    'german',
+    'vietnamese'
 ]
-function getTotal(orders){
-    var total = 0
-    for (var i = 0; i < orders.length; i++){
-        total += orders[i].price;
-    }
-    return total
+
+for (var key in languages){
+    console.log(languages[key])
 }
-console.log(getTotal(orders))
+
+//in ra mot array co cac gia tri nhu ben duoi
+function run(object) {
+    var result = []
+    for (var key in object){
+        result.push(`Thuộc tính ${key} có giá trị ${object[key]}`)
+    }
+    return result
+}
+
+
+// Expected results:
+console.log(run({ name: 'Nguyen Van A', age: 16 }));
