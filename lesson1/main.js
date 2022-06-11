@@ -1,33 +1,19 @@
-//for in loop
-var nha = {
-    dc: "hai",
-    loai: 'chungcu',
-    quan: "hai ba trung"
-}
-
-for (var key in nha){
-    console.log(nha[key])
-}
-
-var languages = [
-    'english',
-    'german',
-    'vietnamese'
+// vong lap for of
+var color = [
+    'do',
+    'xanh',
+    'tim',
+    'vang'
 ]
 
-for (var key in languages){
-    console.log(languages[key])
+for ( var value of color){
+    console.log(value)
 }
 
-//in ra mot array co cac gia tri nhu ben duoi
-function run(object) {
-    var result = []
-    for (var key in object){
-        result.push(`Thuộc tính ${key} có giá trị ${object[key]}`)
-    }
-    return result
+var info = {
+    name: 'huy',
+    age: 20
 }
 
-
-// Expected results:
-console.log(run({ name: 'Nguyen Van A', age: 16 }));
+console.log(Object.keys(info)) // lay ra mot mang keys
+console.log(Object.values(info)) // lay ra mot mang values
