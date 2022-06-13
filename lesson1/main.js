@@ -3,35 +3,44 @@ var contacts = [
     {
         id: 1,
         name: 'Huy',
-        so: 0
+        so: 0,
+        tien: 10
     },
     {
         id: 2,
         name: 'Duong',
-        so: 9
+        so: 9,
+        tien: 50
     },
     {
         id: 3,
         name: 'Tom',
-        so: 3
+        so: 3,
+        tien: 30
     },
     {
         id: 4,
         name: 'Tom',
-        so: 10
+        so: 10, 
+        tien: 100
     },
 ]
 
-// map()
+// tinh tong so tien cua moi contact theo for loop
 
-function editArray(contacts) {
-    return {
-        id: contacts.id,
-        name: `Ten la: ${contacts.name}`,
-        so: `Sdt: ${contacts.so}`
-    }
+var totalTien = 0
+
+for (var contact of contacts){
+    totalTien = totalTien + contact.tien
 }
 
-var editContact = contacts.map(editArray)
+console.log(totalTien)
 
-console.log(editContact)
+// tinh tong so tien theo cach reduce()
+
+var total = contacts.reduce(function(t, contact){
+    return t += contact.tien
+}, 0)
+
+console.log(total)
+
