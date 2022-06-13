@@ -22,35 +22,16 @@ var contacts = [
     },
 ]
 
-//forEach() in ra cac phan tu
-var contact = contacts.forEach(function(contact){
-    console.log(contact)
-})
+// map()
 
-//every() tim xem so moi nguoi co phai 0 ko
-var is0 = contacts.every(function(contact){
-    return contact.so === 0
-})
+function editArray(contacts) {
+    return {
+        id: contacts.id,
+        name: `Ten la: ${contacts.name}`,
+        so: `Sdt: ${contacts.so}`
+    }
+}
 
-console.log(is0)
+var editContact = contacts.map(editArray)
 
-//some() chi can mot phan tu thoa man thi se dung
-var some = contacts.some(function(contact){
-    return contact.so === 0
-})
-
-console.log(some)
-
-//find() tim phan tu theo gia tri yeu cau, chi tra ve mot phan tu tim dc dau tien
-var find = contacts.find(function(contact){
-    return contact.name === "Huy"
-})
-
-console.log(find)
- 
-//filter() tim phan tu theo gia tri yeu cau, tra lai tat ca phan thu thoa man
-var filter = contacts.filter(function(contact){
-    return contact.name === "Tom"
-})
-
-console.log(filter)
+console.log(editContact)
