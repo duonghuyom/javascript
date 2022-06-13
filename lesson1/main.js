@@ -1,46 +1,48 @@
-// Mang advanced
-var contacts = [
+// Array reduce() continue
+
+//flat ca mang ben duoi
+var listNum = [1, 2, [3, 4], 5, 6, [7, 8, 9]]
+
+var flatten = listNum.reduce(function(list, num){ // su dung ham reduce de lay ra tung gia tri trong mang
+    return list.concat(num) //concat de noi lai cac gia tri trong mang
+}, []) // initial value o day la mot mang rong de luu cac gia tri vao ben trong
+
+console.log(flatten)
+
+//lay ra mot array trong mot object su dung reduce()
+var hocSinh = [
     {
-        id: 1,
         name: 'Huy',
-        so: 0,
-        tien: 10
+        monHoc: [
+            {
+                id: 1,
+                mon: 'Toan'
+            },
+            {
+                id: 2,
+                mon: 'Van'
+            }
+
+        ]
     },
     {
-        id: 2,
-        name: 'Duong',
-        so: 9,
-        tien: 50
-    },
-    {
-        id: 3,
         name: 'Tom',
-        so: 3,
-        tien: 30
-    },
-    {
-        id: 4,
-        name: 'Tom',
-        so: 10, 
-        tien: 100
-    },
+        monHoc: [
+            {
+                id: 3,
+                mon: 'Anh'
+            },
+            {
+                id: 4,
+                mon: 'Ly'
+            }
+
+        ]
+    }
 ]
 
-// tinh tong so tien cua moi contact theo for loop
+var monHoc = hocSinh.reduce(function(id, mon){
+    return id.concat(mon.monHoc)
+}, [])
 
-var totalTien = 0
-
-for (var contact of contacts){
-    totalTien = totalTien + contact.tien
-}
-
-console.log(totalTien)
-
-// tinh tong so tien theo cach reduce()
-
-var total = contacts.reduce(function(t, contact){
-    return t += contact.tien
-}, 0)
-
-console.log(total)
-
+console.log(monHoc)
