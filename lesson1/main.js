@@ -1,36 +1,58 @@
-// promise
-
-var promise = new Promise(
-   function(resolve, reject) {
-        resolve("Success")
-        // reject('Eror')
+var users = [
+    {
+        name: 'HUY',
+        id: 1
+    },
+    {
+        name: 'TOM',
+        id: 2
     }
-)
+]
 
-//reject() resolve()
-promise
-    .then(function(result){
-        console.log('result: ' + result)
+var comments = [
+    {
+        id: 1,
+        content: "rat hay",
+        user_id: 1
+    },
+    {
+        id: 2,
+        content: "rat rat hay",
+        user_id: 2
+    }
+]
+
+function getComments() {
+    return new Promise(function(resolve) {
+        setTimeout(function() {
+            resolve(comments)
+        }, 1000)
     })
-    .catch(function(error){
-        console.log('error: ' + error)
+}
+
+function getUsersByIds(userIds) {
+    return new Promise(function(resolve){
+        var result = users.filter(function(user){
+            return userIds.includes(user.id)
+        })
+        resolve(result)
+    }, 1000)
+}
+
+getComments()
+    .then(function(comments){
+        var userIds = comments.map(function(comment){
+            return comment.user_id
+        })
+        
+        return getUsersByIds(userIds)
+            .then(function(users){
+                return {
+                    users: users,
+                    comments: comments
+                }
+            })
     })
-
-//all()
-
-var promise1 = new Promise(function(resolve){
-    setTimeout(function(){
-        resolve([2,3])
-    }, 5000)
-})
-
-var promise2 = new Promise(function(resolve){
-    setTimeout(function(){
-        resolve([1])
-    }, 2000)
-})
-
-Promise.all([promise1, promise2]) 
-    .then(function([result1, result2]) {
-        console.log(result1.concat(result2))
+    .then(function(users){
+        console.log(users)
     })
