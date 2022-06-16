@@ -1,26 +1,36 @@
-// callback()
-// la ham
-// duoc truyen qua doi so
+// promise
 
-function myFunction(param){
-    param('OM')
-}
+var promise = new Promise(
+   function(resolve, reject) {
+        resolve("Success")
+        // reject('Eror')
+    }
+)
 
-function callBack(value){
-    console.log('Day la:', value)
-}
+//reject() resolve()
+promise
+    .then(function(result){
+        console.log('result: ' + result)
+    })
+    .catch(function(error){
+        console.log('error: ' + error)
+    })
 
-myFunction(callBack)
+//all()
 
-//
-var courses = [
-    'JS',
-    'C',
-    'Python'
-]
-
-var htmls = courses.map(function(course){
-    return `<h2>${course}</h2>`
+var promise1 = new Promise(function(resolve){
+    setTimeout(function(){
+        resolve([2,3])
+    }, 5000)
 })
 
-console.log(htmls.join(''))
+var promise2 = new Promise(function(resolve){
+    setTimeout(function(){
+        resolve([1])
+    }, 2000)
+})
+
+Promise.all([promise1, promise2]) 
+    .then(function([result1, result2]) {
+        console.log(result1.concat(result2))
+    })
