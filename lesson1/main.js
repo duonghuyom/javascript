@@ -1,3 +1,4 @@
+// su dung promise de in ra comment cua hai nguoi dung
 var users = [
     {
         name: 'HUY',
@@ -28,7 +29,7 @@ function getComments() {
             resolve(comments)
         }, 1000)
     })
-}
+} //lay comment cua tung user su dung promise, sau 1s moi thuc hie duoc
 
 function getUsersByIds(userIds) {
     return new Promise(function(resolve){
